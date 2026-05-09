@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>الوجبات - مطعم القصر</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="myFunctions.js"></script>
+</head>
+<body>
+    <header>
+        <h1>مطعم القصر - Al-Qasr Restaurant</h1>
+        <nav>
+            <a href="home.html">الرئيسية</a> | <a href="AboutUs.html">من نحن</a> | <a href="Meals.html">الوجبات</a>
+        </nav>
+    </header>
+
+    <table border="1" style="width:100%; margin-top:20px; text-align:center;">
+        <tr style="background-color: #15088b; color: white;">
+            <th>الرمز</th>
+            <th>الوجبة</th>
+            <th>السعر</th>
+            <th>إظهار التفاصيل</th>
+            <th>اختيار</th>
+        </tr>
+
+        <tr>
+            <td>SF-001</td><td>وجبة شاورما</td><td>40000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal" value="40000"></td>
+        </tr>
+        <tr class="details-row" style="display:none; background-color: #f9f9f9;">
+            <td colspan="5">
+                <b>المكونات:</b> دجاج متبل، بطاطا مقلية، مخلل. <br>
+                <b>الصلصة:</b> كريم ثوم حار، دبس رمان. <br>
+                <img src="وجبة شاورما.jpg" width="150" alt="شاورما">
+            </td>
+        </tr>
+
+        <tr>
+            <td>SF-002</td><td>وجبة بطاطا</td><td>30000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal" value="30000"></td>
+        </tr>
+        <tr class="details-row" style="display:none; background-color: #f9f9f9;">
+            <td colspan="5">
+                <b>المكونات:</b> بطاطا مقلية مقرمشة، بهارات. <br>
+                <b>الصلصة:</b> كاتشب، مايونيز بالثوم. <br>
+                <img src="وجبة بطاطا.jpg" width="150" alt="بطاطا">
+            </td>
+        </tr>
+
+        <tr>
+            <td>SF-003</td><td>وجبة دجاج مقلي</td><td>60000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal" value="60000"></td>
+        </tr>
+        <tr class="details-row" style="display:none; background-color: #f9f9f9;">
+            <td colspan="5">
+                <b>المكونات:</b> دجاج بروستد مقرمش. <br>
+                <b>الصلصة:</b> صلصة الكوكتيل، كريم ثوم. <br>
+                <img src="وجبة دجاج مقلي.jpg" width="150" alt="بروستد">
+            </td>
+        </tr>
+
+        <tr>
+            <td>SF-004</td><td>بيتزا خضار</td><td>50000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal" value="50000"></td>
+        </tr>
+        <tr class="details-row" style="display:none; background-color: #f9f9f9;">
+            <td colspan="5">
+                <b>المكونات:</b> فلفل، زيتون، فطر، جبنة. <br>
+                <b>الصلصة:</b> صلصة البيتزا الإيطالية. <br>
+                <img src="بيتزا خضار.jpg" width="150" alt="بيتزا">
+            </td>
+        </tr>
+
+        <tr>
+            <td>SF-005</td><td>وجبة كباب مشوي</td><td>100000</td>
+            <td><input type="checkbox" class="show-details"></td>
+            <td><input type="checkbox" class="select-meal" value="100000"></td>
+        </tr>
+        <tr class="details-row" style="display:none; background-color: #f9f9f9;">
+            <td colspan="5">
+                <b>المكونات:</b> لحم غنم مشوي، بصل، بقدونس. <br>
+                <b>الصلصة:</b> طحينة بالليمون، لبن زبادي. <br>
+                <img src="وجبة كباب.jpg" width="150" alt="كباب">
+            </td>
+        </tr>
+    </table>
+
+    <button type="button" id="continueBtn" style="margin-top:20px; padding:10px 20px; background:#15088b; color:white; border:none; cursor:pointer; border-radius:5px;">متابعة الطلب</button>
+    <div id="orderSection" style="display:none; border:2px solid #15088b; padding:20px; margin-top:20px; background:white; text-align:right;">
+        <h3>نموذج الطلب - بيانات الزبون</h3>
+        الاسم الكامل (English): <input type="text" id="custName" style="width:250px;"><br><br>
+        رقم الحساب (6 خانات): <input type="text" id="bankAcc" style="width:250px;"><br><br>
+        التاريخ (dd-mm-yyyy): <input type="text" id="orderDate" placeholder="25-05-2026" style="width:250px;"><br><br>
+        رقم الموبايل: <input type="text" id="phone" style="width:250px;"><br><br>
+        <button type="button" onclick="validateAndSubmit()" style="padding:10px 20px; background:#15088b; color:white; border:none; cursor:pointer; border-radius:5px;">إرسال الطلب</button>
+    </div>
+</body>
+</html>
